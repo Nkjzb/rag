@@ -6,7 +6,10 @@
 
 ```
 ├── config
-│   └── config.json.template        # 配置文件模板
+│   └── config.json.template       # 配置文件模板
+├── data
+│   ├── store_knowledge.index      # Faiss 向量库存储目录
+│   └── 运动鞋店铺知识库.txt          # 知识库txt文本文件
 ├── lec1_streamchat.py             # 普通的流式输入输出主程序
 ├── sql
 │   ├── ai_context.sql             # 对话上下文数据库表结构
