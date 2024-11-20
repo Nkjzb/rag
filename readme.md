@@ -25,6 +25,7 @@
 
 在使用前，需要根据 `config.json.template` 创建 `config.json` 文件，填入相应的配置。
 
+用户应当自行创建 `data/` 目录，并将知识库文本文件 `运动鞋店铺知识库.txt` 放入其中。
 
 ## 使用方法
 
@@ -38,7 +39,7 @@ pip install -r requirements.txt
 python lec1_streamchat.py
 ```
 
-3. 完成向量化功能，并测试：
+3. 完成知识库文本向量化，并测试：
 ```bash
 python src/text_vectorizer.py
 python src/vectorizer_test.py
@@ -51,7 +52,7 @@ python src/rag_chat_bot.py
 
 ## 测试样例
 
-### 向量化功能测试
+### 知识库向量化功能测试
 输出示例：
 ```
 搜索查询: 如何退换货？
@@ -72,14 +73,12 @@ ID: 6
 ### RAG 问答机器人
 输入示例：
 ```
-鞋子有什么品牌的呢？
+你: 如何退换货？
 ```
 
 输出示例：
 ```
-ChatGPT: 根据提供的参考信息，鞋子的品牌包括Adidas、Nike、Puma、Reebok、New Balance、Asics、Under Armour等知名品牌；另外还有休闲品牌如Converse、Vans，以及高端品牌如Gucci、Balenciaga等。以上品牌均提供各种类型的运动鞋和休闲鞋供选择。
-
-所有鞋款都有正品保证，支持专柜验货。您对哪个系列感兴趣，我可以为您详细介绍。
+ChatGPT: 用户可以在收到商品后的12天内申请退换货。需要确保商品未使用且原包装完好。在申请退换货时，用户需要提供订单号和付款截图作为凭证。请注意，特价和促销商品是不支持退换货的，退回商品时，请妥善包装以避免运输损坏。一旦商品返回并经过检查确认无误，退款将在11个工作日内处理完成。
 ```
 
 输入示例：
@@ -96,7 +95,7 @@ ChatGPT: 根据提供的参考信息，鞋子的品牌包括Adidas、Nike、Puma
 
 - `text_vectorizer.py`: 负责文本向量化，使用 OpenAI 的 embedding 模型
 - `rag_chat_bot.py`: 实现 RAG 架构的问答逻辑
-- `sql/`: 包含数据库表结构，用于存储对话历史和上下文
+- `sql/`: 包含数据库表结构，用于创建知识库文本数据库
 - 测试文件可用于功能验证和调试
 
 ## 注意事项
