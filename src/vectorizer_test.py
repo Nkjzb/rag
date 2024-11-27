@@ -1,6 +1,7 @@
 from text_vectorizer import TextVectorizer
 
 def test_search():
+    """ 测试：向量化输入文本，查询并输出相似的知识库文本 """
     # 初始化向量器
     vectorizer = TextVectorizer('config/config.json')
     
